@@ -1,0 +1,17 @@
+#!python
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+driver.get("http://140.113.209.24/0656000")
+
+assert "Title" in driver.title
+elem = driver.find_element_by_xpath('//*[@id="id"]')
+id = (elem.text)
+print(id)
+elem = driver.find_element_by_xpath('//*[@id="time"]')
+time = (elem.text)
+print(time)
+elem = driver.find_element_by_xpath('//*[@id="secret"]')
+hash = (elem.text)
+print(hash)
+#driver.close()
